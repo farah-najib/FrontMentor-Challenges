@@ -1,0 +1,25 @@
+/* .attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+} */
+:root {
+    --Softblue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --mainBG: hsl(217, 54%, 11%);
+    --cardBG: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+ @font-face {
+        font-family: "Outfit";
+        src: url("https://fonts.google.com/specimen/Outfit");
+      }
+
+    body{
+        background-color: var(--mainBG);
+        font-size: 18px;
+        
+    }
