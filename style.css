@@ -44,6 +44,11 @@ h2 {
 	overflow: hidden;
 	border: 0.5rem solid;
 }
+.card:hover{
+
+  border: 3px solid #e5e6f1;
+
+}
 .card_header{
     background-color: blueviolet;
     height: 10rem;
@@ -74,4 +79,7 @@ h2 {
 	border-radius: 0.6rem;
 	font-weight: 50;
 	border: 0.35rem solid;
+}
+a:hover{
+    border: 3px solid #e5e6f1;
 }
