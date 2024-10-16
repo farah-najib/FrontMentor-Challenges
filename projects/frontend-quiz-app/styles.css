@@ -1,0 +1,21 @@
+:root{
+    --purple:#A729F5;
+    --darknavy:#313E51;
+    --greynavy:#626C7F;
+    --lightgrey:#F4F6FA;
+    --lightblish:#ABC1E1;
+    --green:#26D782;
+    --navy:#3B4D66;
+    --red:#EE5454;
+    --purewhite:#FFFFFF;
+
+}
+ @font-face {
+        font-family: "Outfit";
+        src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+      }
+
+      @font-face {
+        font-family: "Young Serif";
+        src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
+      }
