@@ -1,21 +1,253 @@
-:root{
-    --purple:#A729F5;
-    --darknavy:#313E51;
-    --greynavy:#626C7F;
-    --lightgrey:#F4F6FA;
-    --lightblish:#ABC1E1;
-    --green:#26D782;
-    --navy:#3B4D66;
-    --red:#EE5454;
-    --purewhite:#FFFFFF;
+@font-face {
+  font-family: "Rubik";
+  font-weight: 400;
+  src: local("Rubik"), url("../assets/fonts/Rubik-Regular.woff2") format("woff2"), url("../assets/fonts/Rubik-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Rubik";
+  font-weight: 500;
+  src: local("Rubik"), url("../assets/fonts/Rubik-Medium.woff2") format("woff2"), url("../assets/fonts/Rubik-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  src: local("Rubik"), url("../assets/fonts/Rubik-Italic.woff2") format("woff2"), url("../assets/fonts/Rubik-Italic.woff") format("woff");
+}
+
+:root {
+    --purple: #a729f5;
+    --darknavy: #313e51;
+    --greynavy: #626c7f;
+    --lightgrey: #f4f6fa;
+    --lightblish: #abc1e1;
+    --green: #26d782;
+    --navy: #3b4d66;
+    --red: #ee5454;
+    --purewhite: #ffffff;
+
+    --light-text: #313e51;
+    --dark-bg: #3b4d66;
+    --light-bg: #f4f6fa;
+    --light-selection-bg: #ffffff;
+    --dark-selection-bg-and-light-small-text: #626c7f;
+    --dark-small-text: #abc1e1;
+    --purple: #a729f5;
+    --green: #26d782;
+    --red: #ee5454;
+
+    --light-theme-desktop-bg: url('assets/images/pattern-background-desktop-light.svg');
+    --dark-theme-desktop-bg: url('assets/images/pattern-background-desktop-dark.svg');
+
+    --light-theme-tablet-bg: url('assets/images/pattern-background-tablet-light.svg');
+    --dark-theme-tablet-bg: url('assets/images/pattern-background-tablet-dark.svg');
+
+    --light-theme-mobile-bg: url('assets/images/pattern-background-mobile-light.svg');
+    --dark-theme-mobile-bg: url('assets/images/pattern-background-mobile-dark.svg');
+
+    /* --light-sun: url('assets/images/icon-sun-dark.svg');
+    --dark-sun: url('assets/images/icon-sun-light.svg');
+
+    --light-moon: url('assets/images/icon-moon-dark.svg');
+    --dark-moon: url('assets/images/icon-moon-light.svg'); */
+}
+
+.light-theme {
+    --bg-color: var(--light-bg);
+    --bg-image: var(--light-theme-desktop-bg);
+    --icon-sun: var(--light-sun);
+    --icon-moon: var(--light-moon);
+    --text-color: var(--light-text);
+    --progress-bar: var(--light-selection-bg);
+    --btn-opacity: 1;
+    --btn-hover-opacity: 0.7;
+    --small-text-color: var(--dark-selection-bg-and-light-small-text);
+    --button-color: var(--light-selection-bg);
+}
+
+.dark-theme {
+    --bg-color: var(--light-text);
+    --bg-image: var(--dark-theme-desktop-bg);
+    --icon-sun: var(--dark-sun);
+    --icon-moon: var(--dark-moon);
+    --text-color: var(--light-bg);
+    --progress-bar: var(--dark-bg);
+    --btn-opacity: 0.9;
+    --btn-hover-opacity: 1;
+    --small-text-color: var(--dark-small-text);
+    --button-color: var(--dark-bg);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: var(--light-theme-desktop-bg);
+    background-color: var(--light-bg);
+}
+*{
+     font-family: "Rubik";
+     color: var(--darknavy);
+}
+header {
+    /* background-color: #3B4D66; */
+    height: 56px;
+    width: 1157px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* The switch - the box around the slider */
+.switch-theme {
+    display: inline-flex;
+    flex-direction: row;
+    width: 128px;
+    height: 28px;
+    /* background-color: #EE5454; */
+    float: right;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--purple);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.toggleicon {
+    /* background-color: #EE5454; */
+}
+
+.container {
+    width: 1160px;
+    height: 456px;
+    /* background-color: #2196f3; */
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+}
+.welcome-paragraph{
 
 }
- @font-face {
-        font-family: "Outfit";
-        src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
-      }
+.welcom-word{
+      font-size: 3.2rem;
+    font-weight: 300;
+  line-height: 4.2rem;
+}
+ .welcom-word .quiz-type {
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 4.2rem;
+}
 
-      @font-face {
-        font-family: "Young Serif";
-        src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
-      }
+.welcom-word .quiz-type {
+  font-weight: 500;
+}
+
+ .welcome-description {
+  color: var(--greynavy);
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+.list-of-quizs {
+    width: 564px;
+    height: 456px;
+    display: grid;
+    gap: 24px; /*Desired gap between elements*/
+    /* background-color: #A729F5; */
+}
+.quiz-card {
+    width: 564px;
+    height: 96px;
+    border-radius: 24px;
+    background-color: var(--purewhite);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+.quiz-logo{
+  border-radius: 0.5rem;
+   box-sizing: border-box;
+  padding: 0.5rem;
+  width: 56px;
+  height: 56px;
+  margin-right: 32px;
+}
+
+.quiz-title {
+
+    font-size: 28px;
+    text-align: center;
+}
+.javascript-bg {
+  background-color: #ebf0ff;
+}
+
+.html-bg{
+    background-color: #FFF1E9;
+}
+.css-bg{
+    background-color: #E0FDEF;
+}
+.accessibility-bg{
+    background-color:#F6E7FF ;
+}
